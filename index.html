@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Color Converter</title>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- END OF BOOTSTRAP -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="colorConverter.js" defer></script>
+  </head>
+  <body>
+    <div class= "main-title">
+      <h1 class= "headline">COLOR CONVERTER</h1>
+      <h3 class= "credits">BY</h3>
+      <h3 class= "credits">LBD</h3>
+    </div>
+    
+    <div class= "main-box">
+
+      <div class="left-side">
+        <h3 class="heading-1">Your Color</h3>
+        <div id="colorPreview" class="circle-color-preview"></div>
+        <br> 
+        
+        <!-- DROPDOWN MENU FOR INPUT COLOR TYPE: -->
+
+        <form class="framework-label">
+          <label for="framework1"">Your Color Type</label>
+          <select onchange="displayInputColorCode(value);" id="framework1">
+            <option value="0">--</option>
+            <option value="1">HEX</option>
+            <option value="2">RGB</option>
+          </select>
+        </form>
+        
+        <!--USING THIS EVENT TO DISPLAY HEX TEXT BOXES WHEN SELECTED/ RGB TEXT BOXES WHEN SELECTED
+          onclick="doSomething();" 
+        displayInputColorCode(value) accepts the value and decides with a switch statement which text boxes to reveal-->
+        <br>
+        
+        <!-- HEX TEXT BOX -->
+        <form class="framework-label code-textbox hexHidden" id="color-code-HEX" > HEX <input type="text" name="colorCodeHEX" placeholder="#000000">
+          
+        </form>
+      <br>
+      <!-- RGB TEXT BOX -->
+        <form class="framework-label code-textbox rgbCode-letters rgbHidden" id="color-code-R">R<input type="text" name="colorCodeR" placeholder="255" class="rgbCode">
+        </form>
+        <form class="framework-label code-textbox rgbCode-letters rgbHidden" id="color-code-G">G <input type="text" name="colorCodeG" placeholder="255" class="rgbCode">
+        </form>
+        <form class="framework-label code-textbox rgbCode-letters rgbHidden" id="color-code-B">B <input type="text" name="colorCodeB" placeholder="255" class="rgbCode">
+        </form>
+        
+        <br><br>
+
+
+        <!-- DROPDOWN MENU FOR INPUT COLOR TYPE: -->
+
+        <form class="framework-label">
+          <label for="framework2"">Desired Color Type</label>
+          <select id="framework2">
+            <option value="0"></option>
+            <option value="1">HEX</option>
+            <option value="2">RGB</option>
+          </select>
+        </form>
+
+        <br>
+        
+<br><br>
+        
+        <form>
+          <!-- HOW TO USE AN EVENT ON A BUTTON CLICK 
+            <button onclick="myFunction()">Click me</button>  -->
+
+          <button id="convert" type="button" onclick="validateColorCodes()" class="btn btn-outline-dark" >Convert</button>
+          
+          <!-- validateInputColorCode() validates the input color code and then formats the response -->
+        </form>
+      </div>
+
+      <div class="right-side">
+        <h3 class="heading-2">Results</h3>
+        
+        
+      </div>
+      
+    </div>
+
+  </body>
+</html>
